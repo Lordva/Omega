@@ -707,7 +707,58 @@ const ToolboxMessageTree Physics[] = {
   ToolboxMessageTree::Node(I18n::Message::PlanckUnitsTag, PlanckUnits),
 };
 
+//MES TEST CI DESSOUS, INTEGRATION DE LA SI
 
+const ToolboxMessageTree Dynamics[] = {
+  ToolboxMessageTree::Leaf(I18n::Message::TMDTAG, I18n::Message::TMD, false,I18n::Message::TMD),
+  ToolboxMessageTree::Leaf(I18n::Message::PFDTAG, I18n::Message::PFD, false,I18n::Message::PFD),
+};
+
+const ToolboxMessageTree Energitic[] = {
+  ToolboxMessageTree::Leaf(I18n::Message::PowerTAG, I18n::Message::Power, false, I18n::Message::Power),
+  ToolboxMessageTree::Leaf(I18n::Message::RendementTAG, I18n::Message::Rendement, false, I18n::Message::Rendement),
+};
+
+const ToolboxMessageTree RDM[] = {
+  ToolboxMessageTree::Leaf(I18n::Message::TMDTAG, I18n::Message::TMD, false, I18n::Message::TMD),
+};
+
+const ToolboxMessageTree Sensors[] = {
+  ToolboxMessageTree::Leaf(I18n::Message::QuantumTAG, I18n::Message::Quantum, false, I18n::Message::Quantum),
+};
+
+const ToolboxMessageTree ClassA[] = {
+    ToolboxMessageTree::Leaf(I18n::Message::RangeATAG, I18n::Message::RangeA, false, I18n::Message::RangeA),
+    ToolboxMessageTree::Leaf(I18n::Message::SubnetATAG, I18n::Message::SubnetA, false, I18n::Message::SubnetA),
+};
+
+const ToolboxMessageTree ClassB[] = {
+    ToolboxMessageTree::Leaf(I18n::Message::RangeTAG, I18n::Message::RangeB, false, I18n::Message::RangeB),
+    ToolboxMessageTree::Leaf(I18n::Message::SubnetTAG, I18n::Message::SubnetB, false, I18n::Message::SubnetB),
+};
+
+const ToolboxMessageTree ClassC[] = {
+    ToolboxMessageTree::Leaf(I18n::Message::RangeTAG, I18n::Message::RangeC, false, I18n::Message::RangeC),
+    ToolboxMessageTree::Leaf(I18n::Message::SubnetTAG, I18n::Message::SubnetC, false, I18n::Message::SubnetC),
+};
+
+const ToolboxMessageTree IP[] = {
+  ToolboxMessageTree::Node(I18n::Message::ClassA, ClassA),
+  ToolboxMessageTree::Node(I18n::Message::ClassB, ClassB),
+  ToolboxMessageTree::Node(I18n::Message::ClassC, ClassC),
+};
+
+const ToolboxMessageTree Networking[] = {
+  ToolboxMessageTree::Node(I18n::Message::IP, IP),
+};
+
+const ToolboxMessageTree SI[] = {
+  ToolboxMessageTree::Node(I18n::Message::Dynamics, Dynamics),
+  ToolboxMessageTree::Node(I18n::Message::Energitic, Energitic),
+  ToolboxMessageTree::Node(I18n::Message::RDM, RDM),
+  ToolboxMessageTree::Node(I18n::Message::Sensors, Sensors),
+  ToolboxMessageTree::Node(I18n::Message::Networking, Networking),
+};
 
 const ToolboxMessageTree menu[] = {
   ToolboxMessageTree::Leaf(I18n::Message::AbsCommandWithArg, I18n::Message::AbsoluteValue),
@@ -727,7 +778,8 @@ const ToolboxMessageTree menu[] = {
   ToolboxMessageTree::Node(I18n::Message::HyperbolicTrigonometry, trigonometryChildren),
   ToolboxMessageTree::Node(I18n::Message::Fluctuation, predictionChildren),
   ToolboxMessageTree::Node(I18n::Message::Chemistry, chemistry),
-  ToolboxMessageTree::Node(I18n::Message::Physics, Physics)
+  ToolboxMessageTree::Node(I18n::Message::Physics, Physics),
+  ToolboxMessageTree::Node(I18n::Message::SI, SI)
   };
 
 const ToolboxMessageTree toolboxModel = ToolboxMessageTree::Node(I18n::Message::Toolbox, menu);
