@@ -7,7 +7,7 @@ class BacklightDimmingTimer : public Timer {
 public:
   BacklightDimmingTimer();
 private:
-  constexpr static int k_idleBeforeDimmingDuration = 30*1000; // In miliseconds
+  constexpr static int k_idleBeforeDimmingDuration = 20*1000; // In miliseconds
   constexpr static int k_dimBacklightBrightness = 0;
   bool fire() override;
 };
