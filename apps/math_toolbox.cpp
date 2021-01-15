@@ -710,21 +710,25 @@ const ToolboxMessageTree Physics[] = {
 //MES TEST CI DESSOUS, INTEGRATION DE LA SI
 
 const ToolboxMessageTree Dynamics[] = {
-  ToolboxMessageTree::Leaf(I18n::Message::TMDTAG, I18n::Message::TMD, false,I18n::Message::TMD),
-  ToolboxMessageTree::Leaf(I18n::Message::PFDTAG, I18n::Message::PFD, false,I18n::Message::PFD),
+  ToolboxMessageTree::Leaf(I18n::Message::TMDCommandWithArgs, I18n::Message::TMDTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::PFDCommandWithArgs, I18n::Message::PFDTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::KeplerCommandWithArgs, I18n::Message::KeplerTAG),
 };
 
 const ToolboxMessageTree Energitic[] = {
-  ToolboxMessageTree::Leaf(I18n::Message::PowerTAG, I18n::Message::Power, false, I18n::Message::Power),
-  ToolboxMessageTree::Leaf(I18n::Message::RendementTAG, I18n::Message::Rendement, false, I18n::Message::Rendement),
+  ToolboxMessageTree::Leaf(I18n::Message::PowerCommandWithArgs, I18n::Message::PowerTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::RendementCommandWithArgs, I18n::Message::RendementTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::EppCommandWithArgs, I18n::Message::EppTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::EcCommandWithArgs, I18n::Message::EcTAG),
+  ToolboxMessageTree::Leaf(I18n::Message::EprCommandWithArgs, I18n::Message::EprTAG),
 };
 
 const ToolboxMessageTree RDM[] = {
-  ToolboxMessageTree::Leaf(I18n::Message::TMDTAG, I18n::Message::TMD, false, I18n::Message::TMD),
+  ToolboxMessageTree::Leaf(I18n::Message::TMDCommandWithArgs, I18n::Message::TMDTAG),
 };
 
 const ToolboxMessageTree Sensors[] = {
-  ToolboxMessageTree::Leaf(I18n::Message::QuantumTAG, I18n::Message::Quantum, false, I18n::Message::Quantum),
+  ToolboxMessageTree::Leaf(I18n::Message::QuantumCommandWithArgs, I18n::Message::QuantumTAG),
 };
 
 const ToolboxMessageTree ClassA[] = {
@@ -752,7 +756,12 @@ const ToolboxMessageTree Networking[] = {
   ToolboxMessageTree::Node(I18n::Message::IP, IP),
 };
 
+const ToolboxMessageTree Electricity[] = {
+  ToolboxMessageTree::Node(I18n::Message::IP, IP),
+};
+
 const ToolboxMessageTree SI[] = {
+  ToolboxMessageTree::Node(I18n::Message::Electricity, Electricity),
   ToolboxMessageTree::Node(I18n::Message::Dynamics, Dynamics),
   ToolboxMessageTree::Node(I18n::Message::Energitic, Energitic),
   ToolboxMessageTree::Node(I18n::Message::RDM, RDM),
